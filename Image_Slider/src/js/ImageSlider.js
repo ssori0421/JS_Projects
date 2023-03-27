@@ -44,10 +44,6 @@ export default class ImageSlider {
     this.controlWrapEl = this.sliderWrapEl.querySelector('#control-wrap');
   }
 
-  initAutoplay() {
-    this.#intervalId = setInterval(this.moveToRight.bind(this), 3000);
-  }
-
   initSliderNumber() {
     this.#slideNumber = this.sliderListEl.querySelectorAll('li').length;
   }
@@ -58,6 +54,10 @@ export default class ImageSlider {
 
   initSliderListWidth() {
     this.sliderListEl.style.width = `${this.#slideNumber * this.#slideWidth}px`;
+  }
+
+  initAutoplay() {
+    this.#intervalId = setInterval(this.moveToRight.bind(this), 3000);
   }
 
   addEvent() {
